@@ -906,7 +906,7 @@ def on_speaker_changed(screen: Screen, event: ft.ControlEvent) -> None:
     raw = str(event.data or screen.w.speaker_dropdown.value or "").strip()
     if raw.isdigit():
         screen.settings.default_speaker_id = int(raw)
-        save_settings(screen.settings)
+        screen.settings.save()
 
 
 def wire_events(screen: Screen) -> None:
