@@ -592,7 +592,12 @@ class TestInAppAudioPlayer(unittest.TestCase):
     def test_mci_full_control_cycle(self) -> None:
         player = InAppAudioPlayer()
         self.assertEqual(player.backend_name, "_MciBackend")
-        player.load(self.wav)
+        try:
+            player.load(self.wav)
+        except RuntimeError as exc:
+            if "MCI 326" in str(exc) or "No wave device" in str(exc):
+                self.skipTest("No wave device on Windows CI (MCI 326)")
+            raise
         self.assertGreaterEqual(player.get_length_ms(), 1900)
         player.play()
         time.sleep(0.25)
