@@ -18,6 +18,6 @@ jobs:
         with:
           python-version: "3.12"
       - name: Compile check
-        run: python -m py_compile *.py scripts/*.py tests/*.py
+        run: python -m compileall -q .
       - name: Run unit tests
         run: python -m unittest discover -s tests -v
