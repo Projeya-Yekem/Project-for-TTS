@@ -34,6 +34,7 @@ from typing import Dict, List, Optional, Tuple
 
 from config import DEFAULT_SPEAKER_ID, get_app_root
 from locales import msg
+from text_utils import split_long_text
 
 # Piper is a console program; on Windows it must not flash a black window each
 # time the one-shot fallback starts.
