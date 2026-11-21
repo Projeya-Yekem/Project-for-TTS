@@ -1,0 +1,4 @@
+# Kurmanji-TTS Desktop Dependencies (pinned to verified 2026-11-20 versions)
+flet==0.86.5
+sherpa-onnx==2.0.1
+certifi>=2024.1.1

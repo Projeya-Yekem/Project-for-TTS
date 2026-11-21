@@ -1,0 +1,3 @@
+listener_id,sample_id,profile,clarity,naturalness,pronunciation,rhythm,arabic_letters,overall_mos
+# Example row (delete comments before running analyze_mos.py):
+# L01,S01,piper_kmr,4,4,4,4,,4
