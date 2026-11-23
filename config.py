@@ -19,7 +19,7 @@ import shutil
 import sys
 from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Dict, Optional
+from typing import Optional
 
 
 APP_NAME = "Kurmanji-TTS"
@@ -68,12 +68,6 @@ def discover_default_model(models_dir: Path) -> Path:
     return models_dir / "kurmanci.onnx"
 
 
-def model_path_for_voice(root: Path, tts_language: str) -> Path:
-    """Return the ONNX model path for the selected speech language."""
-    file_name = MMS_ARA_MODEL_FILENAME if tts_language == "ar" else KURMANJI_MODEL_FILENAME
-    return root / "models" / file_name
-
-
 def model_path_for_profile(root: Path, engine_profile: str) -> Path:
     """Return the ONNX model path for a unified engine profile."""
     file_name = {
@@ -82,27 +76,6 @@ def model_path_for_profile(root: Path, engine_profile: str) -> Path:
         "mms_ara": MMS_ARA_MODEL_FILENAME,
     }.get(engine_profile, KURMANJI_MODEL_FILENAME)
     return root / "models" / file_name
-
-
-def load_speaker_labels(metadata_path: Path) -> Dict[int, str]:
-    """Load optional human-friendly speaker labels (M/F/voice + default marker)."""
-    labels: Dict[int, str] = {}
-    try:
-        raw = json.loads(Path(metadata_path).read_text(encoding="utf-8"))
-    except (OSError, ValueError, TypeError):
-        return labels
-    for entry in raw:
-        try:
-            sid = int(entry["speaker_id"])
-            name = str(entry.get("display_name", f"Speaker {sid}"))
-            voice = str(entry.get("perceived_voice", "")).strip()
-            label = name if not voice else f"{name} ({voice})"
-            if entry.get("is_default"):
-                label += " ★"
-            labels[sid] = label
-        except (KeyError, TypeError, ValueError):
-            continue
-    return labels
 
 
 def discover_default_piper(piper_dir: Path) -> Path:
