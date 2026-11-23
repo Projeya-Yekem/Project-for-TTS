@@ -31,10 +31,7 @@ TRANSLATIONS: Dict[str, Dict[str, str]] = {
         "label_hawar": "حروف Hawar المكتشفة:",
         "label_samples": "أمثلة نصية سريعة:",
         "clear_text": "مسح النص",
-        "input_label": "Nivîsa Kurmancî (النص الكورمانجي)",
         "input_hint": "Mînak: Rojbaş! Ez dixwazim bi zimanê kurdî biaxivim...",
-        "voice_language": "لغة النطق",
-        "voice_language_tooltip": "اختر لغة النطق: الكورمانجية أو العربية",
         "input_label_ar": "النص العربي",
         "input_hint_ar": "اكتب نصاً عربياً: مرحباً، كيف حالك؟",
         # ------------------------------------------------------------- engine
@@ -134,10 +131,7 @@ TRANSLATIONS: Dict[str, Dict[str, str]] = {
         "label_hawar": "Tîpên Hawarê yên hatine dîtin:",
         "label_samples": "Nimûneyên nivîsê yên bilez:",
         "clear_text": "Nivîsê paqij bike",
-        "input_label": "Nivîsa Kurmancî",
         "input_hint": "Mînak: Rojbaş! Ez dixwazim bi zimanê kurdî biaxivim...",
-        "voice_language": "Zimanê deng",
-        "voice_language_tooltip": "Zimanê axaftinê hilbijêre: Kurmancî an Erebî",
         "input_label_ar": "Nivîsa Erebî",
         "input_hint_ar": "Nivîseke Erebî binivîse: مرحباً، كيف حالك؟",
         # ------------------------------------------------------------- engine
@@ -237,10 +231,7 @@ TRANSLATIONS: Dict[str, Dict[str, str]] = {
         "label_hawar": "Hawar letters found:",
         "label_samples": "Quick text samples:",
         "clear_text": "Clear text",
-        "input_label": "Kurmanji text (Nivîsa Kurmancî)",
         "input_hint": "Mînak: Rojbaş! Ez dixwazim bi zimanê kurdî biaxivim...",
-        "voice_language": "Voice language",
-        "voice_language_tooltip": "Choose the speech language: Kurmanji or Arabic",
         "input_label_ar": "Arabic text",
         "input_hint_ar": "Type Arabic text: مرحباً، كيف حالك؟",
         # ------------------------------------------------------------- engine
@@ -355,10 +346,6 @@ def set_current_language(lang: str) -> None:
     """Set the process-wide language used by engine and validation messages."""
     global _current_language
     _current_language = lang if lang in SUPPORTED_LANGUAGES else "ar"
-
-
-def current_language() -> str:
-    return _current_language
 
 
 def msg(key: str, **kwargs: object) -> str:

@@ -127,7 +127,7 @@ def build_appendices(doc, ctx) -> None:
     T.h2(doc, "أ-4 التحقق من نجاح التثبيت")
     T.body(doc, "أسرع تحقق هو تشغيل حزمة الاختبارات: "
                 "python tests\\test_kurmanji_tts.py، ويُتوقع أن تنتهي بعبارة OK مع "
-                "34 اختباراً. ثم تشغيل التطبيق والتأكد من ظهور شارة «النموذج جاهز» "
+                "37 اختباراً. ثم تشغيل التطبيق والتأكد من ظهور شارة «النموذج جاهز» "
                 "باللون الأخضر في الشريط العلوي.")
 
     # ---------------------------------------------------------------- Appendix B
@@ -155,7 +155,7 @@ def build_appendices(doc, ctx) -> None:
     T.new_page(doc)
     D.heading(doc, "الملحق ج: حالات الاختبار", 1, rtl=True, align="start")
     T.body(doc, "يُعرض هنا نموذج من حالات الاختبار المهمة مع المدخل المتوقع والمخرج "
-                "الفعلي. والحزمة الكاملة (34 اختباراً) موجودة في "
+                "الفعلي. والحزمة الكاملة (37 اختباراً) موجودة في "
                 "tests/test_kurmanji_tts.py.")
     T.table(doc, ctx, "حالات اختبار مختارة", [
         ["الحالة", "المدخل", "المتوقع", "النتيجة"],
@@ -242,7 +242,7 @@ def build_abstract_en(doc, ctx) -> None:
         "pronunciation input, synthesise off the UI thread, then validate the WAV "
         "header and frame count before the result is shown.",
 
-        "The automated suite passes 34 of 34 tests. A real-engine smoke test produced "
+        "The automated suite passes 37 of 37 tests. A real-engine smoke test produced "
         "valid, non-silent audio for all three profiles with no missing Hawar letters. "
         "The real-time factor reached approximately 0.06 for the longest Piper input, "
         "more than sixteen times faster than real time on a laptop CPU, while the MMS "
@@ -283,7 +283,7 @@ def build_abstract_ku(doc, ctx) -> None:
         "Hawar, amadekirina bilêvkirinê li gorî motorê, hilberîna deng li derveyî "
         "xêza navrûyê, û paşê kontrola mecbûrî ya pela WAV berî nîşandana encamê.",
 
-        "Ceribandinên otomatîk 34 ji 34 derbas kirin, û ceribandina motora rastîn dengê "
+        "Ceribandinên otomatîk 37 ji 37 derbas kirin, û ceribandina motora rastîn dengê "
         "durist ji bo her sê profîlan hilberand, bê ku tîpeke Hawar winda bibe. "
         "Faktora dema rastîn (RTF) li nêzîkê 0.06 bû ji bo dirêjtirîn nivîsa Piper, yanî "
         "ji dema rastîn zêdetirî şazdeh caran zûtir li ser CPU-ya laptopekê. Nirxandina "

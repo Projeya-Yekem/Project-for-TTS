@@ -1,4 +1,5 @@
 # خريطة منطق مشروع Kurmanji-TTS — Project Logic Map
+> **⚠ نسخة قديمة محفوظة للمرجعية فقط (2026-11-18).** أرقام الأسطر (`file:line`) وعدد الاختبارات وحالة README الواردة هنا سبقت إعادة الهيكلة. للدراسة استخدموا `docs/CODE_WALKTHROUGH_AR.md` فهو المحدّث.
 
 > أُنشئت في 2026-11-18 من شجرة العمل الحالية في `C:\Users\Luqman\Desktop\Projecton\kurmanji-tts`.
 >Stack: Python 3.13 (`.build-venv`) / Flet 0.86.5 / PyInstaller / Piper VITS CLI / sherpa-onnx 2.0.1 / ONNX Runtime.

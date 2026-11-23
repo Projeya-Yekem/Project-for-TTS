@@ -65,7 +65,7 @@ def load_smoke() -> list:
 
 
 def _series(rows, prefix):
-    pts = [(r["chars"], r["gen"]) for r in rows if r["name"].startswith(prefix)]
+    pts = [(r["chars"], r["gen"]) for r in rows if r["name"].startswith(prefix) and "_ls" not in r["name"]]
     return sorted(pts)
 
 
@@ -96,7 +96,8 @@ def make_charts(perf: dict, rows: list) -> dict:
     for prefix, label, style in (
         ("oneshot_", "Piper (single call)", "o-"),
         ("persist_", "Piper (warm process)", "s-"),
-        ("mms_", "Meta MMS (kmr / ara)", "^-"),
+        ("mms_kmr_", "Meta MMS (kmr)", "^-"),
+        ("mms_ara_", "Meta MMS (ara)", "v-"),
     ):
         pts = _series(rows, prefix)
         if pts:

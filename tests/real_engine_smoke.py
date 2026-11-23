@@ -12,7 +12,6 @@ from __future__ import annotations
 import ctypes
 import math
 import sys
-import time
 import wave
 from pathlib import Path
 
@@ -30,7 +29,6 @@ from text_utils import (
     SAMPLE_KURMANJI_TEXTS,
     analyze_text,
     prepare_text_for_mms,
-    prepare_text_for_tts,
 )
 from tts_engine import KurmanjiTTSEngine, UnifiedTTSEngine
 

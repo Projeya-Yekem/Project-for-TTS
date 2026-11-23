@@ -24,7 +24,6 @@ from dataclasses import dataclass
 from enum import Enum
 from pathlib import Path
 
-from locales import tr as _tr
 from typing import Optional
 
 from locales import msg
@@ -197,7 +196,7 @@ class _MciBackend:
 
     def play(self) -> None:
         if not self._opened:
-            raise RuntimeError(_tr("err_no_audio_loaded"))
+            raise RuntimeError(msg("err_no_audio_loaded"))
         if self._mode() == "paused":
             self._cmd(f"resume {self._alias}")
             return
@@ -290,7 +289,7 @@ class _AplayBackend:
     def load(self, wav_path: Path) -> None:
         self.close()
         if not self._available():
-            raise RuntimeError(_tr("err_aplay_missing"))
+            raise RuntimeError(msg("err_aplay_missing"))
         self._path = Path(wav_path).resolve()
         self._length_ms = int(inspect_wav(self._path).duration_seconds * 1000)
         self._offset_ms = 0
@@ -341,7 +340,7 @@ class _AplayBackend:
 
     def play(self) -> None:
         if self._path is None:
-            raise RuntimeError(_tr("err_no_audio_loaded"))
+            raise RuntimeError(msg("err_no_audio_loaded"))
         if self._paused and self._proc is not None and self._proc.poll() is None:
             self.resume()
             return
