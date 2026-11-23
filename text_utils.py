@@ -24,7 +24,6 @@ from config import get_app_root
 from locales import msg
 
 KURMANJI_SPECIAL_CHARS = ("Ç", "ç", "Ê", "ê", "Î", "î", "Ş", "ş", "Û", "û", "X", "x", "W", "w")
-KURMANJI_DIACRITIC_BASES = ("Ç", "ç", "Ê", "ê", "Î", "î", "Ş", "ş", "Û", "û")
 
 SAMPLE_KURMANJI_TEXTS: Dict[str, str] = {
     "Silav (Short)": "Rojbaş! Tu çawa yî? Ez baş im, spas.",
