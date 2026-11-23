@@ -68,7 +68,8 @@ def build(doc, ctx) -> None:
         "TestConfigAndEngine": "الإعدادات والترحيل والمحركات والتوليد والتصدير",
         "TestLocalization": "تطابق مفاتيح الترجمة واتجاه RTL وعزل النصوص",
         "TestPronunciationPreparation": "أرقام الكرمانجية والقاموس والاختصارات وتصفية MMS",
-        "TestInAppAudioPlayer": "المشغّل الداخلي ومنع المشغّل الخارجي",
+        "TestInAppAudioPlayer": "المشغّل الداخلي ومنع المشغّل الخارجي ورسائل أخطائه",
+       "TestUiHandlers": "معالجات الواجهة: حفظ تغيير المتحدث في settings.json",
         "TestSyntaxAndProprietaryCompliance": "صحة الصياغة وحظر تراخيص غير مناسبة",
     }
     total = 0
